@@ -1,0 +1,23 @@
+{
+  "name": "shinigamilnteam",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/shinigamilnteam-lnvs/shinigamilnteam.git",
+  "author": "shinigamilnteam-lnvs <shinigamilnteam@lnvs.net>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.11",
+    "load-json-file": "6.2.0",
+    "lodash": "^4.17.21",
+    "read-file": "^0.2.0",
+    "string-similarity": "^4.0.4",
+    "write-file-utf8": "^2.0.1",
+    "write-json-file": "4.3.0"
+  },
+  "scripts": {
+    "update": "node update.js",
+    "save": "node save.js"
+  }
+
+}

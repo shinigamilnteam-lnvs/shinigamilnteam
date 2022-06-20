@@ -1,0 +1,28 @@
+name: Update new posts
+
+on:
+  # schedule:
+  #   - cron: '0/10 * * * *'
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn
+      - run: yarn update
+      - name: Update changes in GitHub repository
+        run:  |
+          git config --global user.name 'hako-lnvs' 
+          git config --global user.email 'hako@lnvs.net'
+          git add -A
+          git commit -m '⬆️ update new posts with github action'
+          git push -f
