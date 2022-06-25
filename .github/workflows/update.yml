@@ -21,8 +21,8 @@ jobs:
       - run: yarn update
       - name: Update changes in GitHub repository
         run:  |
-          git config --global user.name 'hako-lnvs' 
-          git config --global user.email 'hako@lnvs.net'
+          git config --global user.name 'shinigamilnteam-lnvs' 
+          git config --global user.email 'shinigamilnteam@lnvs.net'
           git add -A
-          git commit -m '⬆️ update new posts with github action'
+          git commit --allow-empty -m '⬆️ update new posts with github action'
           git push -f
